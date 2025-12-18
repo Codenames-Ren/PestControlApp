@@ -46,7 +46,7 @@ PestControlApp/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/pest-control-management-system.git
+git clone https://github.com/Codenames-Ren/PestControlApp.git
 ```
 
 ---
