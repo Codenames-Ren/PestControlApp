@@ -2,7 +2,7 @@
 
 ## 📌 Project Overview
 
-Pest Control Management System is a simple Java desktop application built using **Java Swing** in **NetBeans**. This application helps manage pest control services, including **client data**, **service packages**, and **payment transactions**.
+Pest Control Management System is a simple Java desktop application built using **Java Swing** in **NetBeans**. The application is designed to manage pest control services, including **client data**, **service packages**, and **payment transactions**.
 
 This project was developed as a **final exam requirement for the 3rd semester** in college.
 
@@ -20,19 +20,24 @@ This project was developed as a **final exam requirement for the 3rd semester** 
 
 ## 📂 Project Structure
 
+The project follows a simple **MVC-style structure** as reflected in the GitHub repository. Please note that **NetBeans may display packages differently** under *Source Packages*, but the structure below represents the actual directory layout.
+
 ```
 PestControlApp/
-├── Source Packages/
-│   ├── <default package>/
-│   │   └── hibernate.cfg.xml  # Hibernate configuration file
-│   ├── images/                # Image assets
-│   ├── pestcontrol.app/       # Application entry & main logic
-│   ├── pestcontrol.entity/    # Hibernate entity classes
-│   ├── pestcontrol.util/      # Utilities (Hibernate config, helpers)
-│   └── view/                  # Java Swing UI (Frames & Forms)
+├── src/
+│   ├── images/                 # Image assets used in the UI
+│   ├── pestcontrol/
+│   │   ├── app/                # Application entry point & controllers
+│   │   │   └── MainApp.java    # Main class to run the application
+│   │   ├── entity/             # Hibernate entity (model) classes
+│   │   └── util/               # Utility classes (Hibernate session, helpers)
+│   ├── view/                   # Java Swing UI (views / forms)
+│   └── hibernate.cfg.xml       # Hibernate configuration file
 ├── Libraries/
 └── README.md
 ```
+
+📌 *Note:* This structure may look different in NetBeans due to how the IDE groups **Source Packages**, but the actual folder structure in GitHub reflects the real package layout.
 
 ---
 
@@ -41,7 +46,7 @@ PestControlApp/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/Codenames-Ren/PestControlApp.git
+git clone https://github.com/your-username/pest-control-management-system.git
 ```
 
 ---
@@ -56,12 +61,16 @@ git clone https://github.com/Codenames-Ren/PestControlApp.git
 
 ### 3️⃣ Configure Database
 
-1. Create a database (example: `pest_control_db`)
-2. Update database configuration in `hibernate.cfg.xml`
-3. Run MainApp.Java at /PestControlApp/SourcePackages/pestcontrol.app/MainApp.Java <- Here
-4. Hibernate ORM will automigrate the databases
-PS. For Login, you must create account with manual queries in your postgree terminal or GUI like Dbeaver.
+1. Create a PostgreSQL database (example: `pest_control_db`)
+2. Update the database configuration inside `hibernate.cfg.xml`
+3. Run `MainApp.java` located at:
+   `src/pestcontrol/app/MainApp.java`
+4. Hibernate ORM will automatically generate the required tables
 
+📌 **Note:**
+
+* Login accounts must be created manually using PostgreSQL queries
+* You can use tools like **psql** or **DBeaver** for this purpose
 
 ```xml
 <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/pest_control_db</property>
@@ -76,7 +85,7 @@ PS. For Login, you must create account with manual queries in your postgree term
 Make sure these libraries are added to the project:
 
 * Hibernate Core
-* PostgreeSQL Connector / JDBC Driver
+* MySQL Connector / JDBC Driver
 * JPA / Persistence API
 
 📌 *If missing, right-click project → Properties → Libraries → Add JAR/Library*
@@ -85,11 +94,12 @@ Make sure these libraries are added to the project:
 
 ## ▶️ Running the Project
 
-1. Locate the **main frame** or **main class** (e.g. `Main.java` or `FrameLogin.java`)
-2. Right-click the file
-3. Click **Run File**
+1. Open the project in **NetBeans**
+2. Navigate to `pestcontrol.app.MainApp`
+3. Right-click `MainApp.java`
+4. Select **Run File**
 
-If configured correctly, the application window should appear.
+If everything is configured correctly, the application window should appear.
 
 ---
 
